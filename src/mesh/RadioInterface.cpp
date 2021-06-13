@@ -22,6 +22,7 @@ const RegionInfo regions[] = {
     RDEF(CN, 470.0f, 2.0f, 20, 0),
     RDEF(JP, 920.0f, 0.5f, 10, 13),    // See https://github.com/meshtastic/Meshtastic-device/issues/346 power level 13
     RDEF(ANZ, 916.0f, 0.5f, 20, 0),    // AU/NZ channel settings 915-928MHz
+    RDEF(NZ868, 864.25f, 0.5f, 7, 6),   //NZ channel settings 864-868 MHz https://gazette.govt.nz/notice/id/2020-go5045
     RDEF(KR, 921.9f, 0.2f, 8, 0),      // KR channel settings (KR920-923) Start from TTN download channel
                                        // freq. (921.9f is for download, others are for uplink)
     RDEF(TW, 923.0f, 0.2f, 10, 0),     // TW channel settings (AS2 bandplan 923-925MHz)
