@@ -1,9 +1,9 @@
+#include "configuration.h"
 #include "PositionPlugin.h"
 #include "MeshService.h"
 #include "NodeDB.h"
 #include "RTC.h"
 #include "Router.h"
-#include "configuration.h"
 
 PositionPlugin *positionPlugin;
 
@@ -14,7 +14,7 @@ PositionPlugin::PositionPlugin()
     setIntervalFromNow(60 * 1000); // Send our initial position 60 seconds after we start (to give GPS time to setup)
 }
 
-bool PositionPlugin::handleReceivedProtobuf(const MeshPacket &mp, const Position *pptr)
+bool PositionPlugin::handleReceivedProtobuf(const MeshPacket &mp, Position *pptr)
 {
     auto p = *pptr;
 

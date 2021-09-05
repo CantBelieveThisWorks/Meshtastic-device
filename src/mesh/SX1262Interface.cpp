@@ -1,6 +1,6 @@
+#include "configuration.h"
 #include "SX1262Interface.h"
 #include "error.h"
-#include <configuration.h>
 
 // Particular boards might define a different max power based on what their hardware can do
 #ifndef SX1262_MAX_POWER
@@ -146,6 +146,8 @@ void INTERRUPT_ATTR SX1262Interface::disableInterrupt()
 
 void SX1262Interface::setStandby()
 {
+    checkNotification(); // handle any pending interrupts before we force standby
+    
     int err = lora.standby();
     assert(err == ERR_NONE);
 

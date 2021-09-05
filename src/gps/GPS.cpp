@@ -1,8 +1,7 @@
-
+#include "configuration.h"
 #include "GPS.h"
 #include "NodeDB.h"
 #include "RTC.h"
-#include "configuration.h"
 #include "sleep.h"
 #include <assert.h>
 
@@ -80,6 +79,8 @@ GPS::~GPS()
     notifySleepObserver.unobserve();
     notifyDeepSleepObserver.unobserve();
 }
+
+bool GPS::hasLock() { return hasValidLocation; }
 
 // Allow defining the polarity of the WAKE output.  default is active high
 #ifndef GPS_WAKE_ACTIVE
